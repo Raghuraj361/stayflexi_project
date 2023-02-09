@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 45px;
+}
+
+.map {
+    color: black;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px;
+    box-shadow: 0 3px 10px 0 #aaa;
+    cursor: pointer;
+}
