@@ -9,7 +9,7 @@ function Details() {
 
     useEffect(() => {
        
-      fetch(`http://www.omdbapi.com/?i=${id}&apikey=4439a98b`).then(
+      fetch(`https://www.omdbapi.com/?i=${id}&apikey=4439a98b`).then(
         (result) => {
           result.json().then((resp) => {
             console.warn(resp);

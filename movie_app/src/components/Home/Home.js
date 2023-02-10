@@ -12,15 +12,16 @@ function Home(props) {
   }
 
   useEffect(() => {
-    fetch("http://www.omdbapi.com/?s=inception&apikey=4439a98b").then(
+    fetch("https://www.omdbapi.com/?s=inception&apikey=4439a98b").then(
       (result) => {
         result.json().then((resp) => {
           console.warn(resp);
-          setData(resp['Search']);
           // sorting movie year
-           data.sort ((a, b) => {
-            return b.Released - a.Released
+          const content = resp['Search']
+           content.sort ((a, b) => {
+            return (parseInt(b.Year) - parseInt(a.Year)) * (-1) 
           })
+          setData(content);
         });
       }
     );
@@ -37,7 +38,7 @@ function Home(props) {
           <img src={movies.Poster} alt="#" />
           </Link>
           <p>Title : {movies.Title}</p>
-          <p>Release Year : {movies.Released}</p>
+          <p>Release Year : {movies.Year}</p>
         </div>
       
       ))}
