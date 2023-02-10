@@ -12,13 +12,11 @@ function Details() {
       fetch(`https://www.omdbapi.com/?i=${id}&apikey=4439a98b`).then(
         (result) => {
           result.json().then((resp) => {
-            console.warn(resp);
             setData(resp);
           });
         }
       );
     }, []);
-    // console.warn(data);
 
   return (
     <div>
